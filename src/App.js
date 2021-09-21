@@ -10,6 +10,12 @@ import {
     MDBNavbarToggler,
     MDBRow
 } from "mdb-react-ui-kit";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 import {useState} from "react";
 import MainPage from "./components/MainPage";
 import LoginPage from "./components/LoginPage";
@@ -18,18 +24,28 @@ function App() {
     const [showBasic, setShowBasic] = useState(false);
 
     return (
-        <div>
-            {/*<MDBNavbar expand='lg' light bgColor='light'>*/}
-            {/*    <MDBContainer fluid>*/}
-            {/*        <MDBNavbarBrand href='#'>Deadlines</MDBNavbarBrand>*/}
-
-
-            {/*    </MDBContainer>*/}
-            {/*</MDBNavbar>*/}
+        <Router>
             <MDBContainer className="" style={{"height": "100vh"}}>
-                <LoginPage/>
+                <MDBRow>
+
+                    <MDBNavbar expand='lg' light bgColor='light'>
+                        <MDBContainer fluid>
+                            <MDBNavbarBrand href='#'>Deadlines</MDBNavbarBrand>
+
+
+                        </MDBContainer>
+                    </MDBNavbar>
+                </MDBRow>
+                <Switch>
+                    <Route path="/login">
+                        <LoginPage/>
+                    </Route>
+                    <Route path="/">
+                        <MainPage/>
+                    </Route>
+                </Switch>
             </MDBContainer>
-        </div>
+        </Router>
     );
 }
 
