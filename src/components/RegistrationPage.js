@@ -6,17 +6,16 @@ import {
     MDBCardTitle,
     MDBCol,
     MDBInput,
-    MDBInputGroup, MDBInputGroupText,
+    MDBInputGroup,
     MDBRow
 } from "mdb-react-ui-kit";
 
-function LoginPage() {
-    return <MDBRow center style={{'height': '100%'}} className=''>
+function RegistrationPage() {
+    return <MDBRow center style={{'height': '90%'}} className=''>
         <MDBCol center size='4' className='col-example '>
             <MDBCard center style={{maxWidth: '35rem'}}>
                 <MDBCardBody>
-                    <MDBCardTitle>Login</MDBCardTitle>
-
+                    <MDBCardTitle>Registration</MDBCardTitle>
                     <MDBCardText>
                         <MDBInputGroup className='mb-3'>
                             <MDBInput label='Email input' id='typeEmail' type='email'/>
@@ -24,8 +23,14 @@ function LoginPage() {
                         <MDBInputGroup className='mb-3'>
                             <MDBInput label='Password input' id='typePassword' type='password'/>
                         </MDBInputGroup>
+                        <MDBInputGroup className='mb-3'>
+                            <MDBInput label='Username' id='typeText' type='text' />
+                        </MDBInputGroup>
+                        <MDBInputGroup className='mb-3'>
+                            <MDBInput label='University name' id='typeText' type='text' />
+                        </MDBInputGroup>
                         <MDBInputGroup>
-                            <MDBBtn>Login</MDBBtn>
+                            <MDBBtn>Registration</MDBBtn>
                         </MDBInputGroup>
                     </MDBCardText>
                 </MDBCardBody>
@@ -33,4 +38,4 @@ function LoginPage() {
         </MDBCol>
     </MDBRow>
 }
-export default LoginPage;
+export default RegistrationPage;
